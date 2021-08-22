@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "006e65f0-5f68-4da7-90bb-e54651b34dc5",
+		"name": "CSharp Project 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Users",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {},
+				"strictSSL": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "appplication/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{ContactServer}}/api/users",
+					"host": [
+						"{{ContactServer}}"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Specific User",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{ContactServer}}/api/users/3",
+					"host": [
+						"{{ContactServer}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post New User",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				},
+				"strictSSL": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "appplication/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Id\": 6,\r\n    \"Email\": \"Patrice@myemail.com\",\r\n    \"Password\": \"12345\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ContactServer}}/api/users",
+					"host": [
+						"{{ContactServer}}"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Specific User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{ContactServer}}/api/users/102",
+					"host": [
+						"{{ContactServer}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"102"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
