@@ -72,14 +72,9 @@ namespace HW2Service.Controllers
                 return NotFound();
             }
 
-            DateTime createdDate = user.CreatedDate;
-            users.Remove(user);
-            user.Id = id;
             user.Email = value.Email;
             user.Password = value.Password;
-            user.CreatedDate = createdDate;
 
-            users.Add(user);
             return Ok(user);
             
         }
