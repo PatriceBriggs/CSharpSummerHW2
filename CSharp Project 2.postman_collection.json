@@ -133,7 +133,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\": 103,\r\n    \"email\": \"Patrice@myemail.com\",\r\n    \"password\": \"56789\"\r\n}",
+					"raw": "{\r\n    \"id\": 101,\r\n    \"email\": \"Patrice@myemail.com\",\r\n    \"password\": \"56789\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -141,13 +141,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{ContactServer}}/api/users",
+					"raw": "{{ContactServer}}/api/users/101",
 					"host": [
 						"{{ContactServer}}"
 					],
 					"path": [
 						"api",
-						"users"
+						"users",
+						"101"
 					]
 				}
 			},

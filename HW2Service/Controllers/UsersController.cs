@@ -37,7 +37,8 @@ namespace HW2Service.Controllers
 
             if (user == null) {
 
-                return  NotFound();
+                int statusCode = 404;               
+                return NotFound(new ApiResponse(statusCode, id));
             }
             return Ok(user);
         }
@@ -48,7 +49,8 @@ namespace HW2Service.Controllers
         {
             if (value == null || value.Email == null || value.Password == null)
             {
-                return BadRequest(new ErrorResponse { Message = "Email and password are both required.", Data = value });
+                int statusCode = 400;
+                return BadRequest(new ApiResponse(statusCode, value));
             }
 
             value.Id = currentUserID++;
@@ -69,7 +71,8 @@ namespace HW2Service.Controllers
 
             if (user == null)
             {
-                return NotFound();
+                int statusCode = 404;
+                return NotFound(new ApiResponse(statusCode, id));
             }
 
             user.Email = value.Email;
@@ -86,13 +89,10 @@ namespace HW2Service.Controllers
         {
             var usersDeleted = users.RemoveAll(u => u.Id == id);
 
-            //var userToDelete = users.FirstOrDefault(t => t.Id == id);
-
-            //users.Remove(userToDelete);
-
             if (usersDeleted == 0)
             {
-                return NotFound(new ErrorResponse { Message = "The user to delete was not found.", Data = id });
+                int statusCode = 404;
+                return NotFound(new ApiResponse(statusCode, id));
             }
             else
             {
